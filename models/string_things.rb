@@ -54,8 +54,8 @@ class StringThings
   end
 
   def self.anagram?(string1, string2)
-    total1 = string1.split("").reduce(1) {|sum, letter| sum + ALPHABET[letter]}
-    total2 = string2.split("").reduce(1) {|sum, letter| sum + ALPHABET[letter]}
+    total1 = string1.split("").reduce(1) {|sum, letter| sum * ALPHABET[letter]}
+    total2 = string2.split("").reduce(1) {|sum, letter| sum * ALPHABET[letter]}
     is_it = StringThings.is_it?(total1, total2)
     "#{string1} #{is_it} an anagram of #{string2}"
   end
